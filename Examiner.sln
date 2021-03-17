@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examiner.WEB", "Examiner\Examiner.WEB.csproj", "{32E36FA6-5579-45BD-BDEF-2061422F0ADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examiner.BLL", "Examiner.BLL\Examiner.BLL.csproj", "{6371A558-6E76-4A7F-ADCA-B39A2ECB356D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examiner.BLL", "Examiner.BLL\Examiner.BLL.csproj", "{6371A558-6E76-4A7F-ADCA-B39A2ECB356D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examiner.DAL", "Examiner.DAL\Examiner.DAL.csproj", "{0AA4FB0D-F4C9-47DD-A174-EEA360485180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examiner.DAL", "Examiner.DAL\Examiner.DAL.csproj", "{0AA4FB0D-F4C9-47DD-A174-EEA360485180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestExaminer", "XUnitTestExaminer\XUnitTestExaminer.csproj", "{D494C981-5192-4301-8851-5BEB05B5851B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0AA4FB0D-F4C9-47DD-A174-EEA360485180}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AA4FB0D-F4C9-47DD-A174-EEA360485180}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AA4FB0D-F4C9-47DD-A174-EEA360485180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D494C981-5192-4301-8851-5BEB05B5851B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D494C981-5192-4301-8851-5BEB05B5851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D494C981-5192-4301-8851-5BEB05B5851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D494C981-5192-4301-8851-5BEB05B5851B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
