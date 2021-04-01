@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace Examiner.DAL.Models
 {
-    public class Teacher : User
+    public class Student : User
     {
         [Required]
         [MaxLength(30)]
         [StringLength(255)]
-        public string Department { get; set; }
+        public string GradeBook { get; set; }
         public virtual ICollection<Group> Groups { get; set; }
-        public virtual ICollection<Test> Tests { get; set; }
-        public Teacher()
+        public virtual ICollection<Archive> Archives { get; set; }
+        public virtual ICollection<TestResult> TestResults { get; set; }
+        public Guid GroupId { get; set; }
+        public Guid ArchiveId { get; set; }
+        public Student()
         {
             Groups = new List<Group>();
-            Tests = new List<Test>();
+            Archives = new List<Archive>();
         }
     }
 }

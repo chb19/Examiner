@@ -13,5 +13,7 @@ namespace Examiner.DAL.Models
 
         [Required]
         public Answer CorrectAnswer { get; set; }
+        public Guid TestId { get; set; }
+        public Test Test { get; set; }
     }
 }

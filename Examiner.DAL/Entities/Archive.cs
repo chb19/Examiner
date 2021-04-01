@@ -9,6 +9,8 @@ namespace Examiner.DAL.Models
     {
         public virtual ICollection<Answer> Answers { get; set; }
         public virtual ICollection<Student> Students { get; set; }
+        public Guid AnswerId { get; set; }
+        public Guid StudentId { get; set; }
         public Archive()
         {
             Answers = new List<Answer>();

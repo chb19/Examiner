@@ -10,6 +10,6 @@ namespace Examiner.DAL.Abstractions
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

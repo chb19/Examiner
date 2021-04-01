@@ -1,13 +1,12 @@
+using Examiner.DAL.EF;
+using Examiner.DAL.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.Services.UserAccountMapping;
 
 namespace Examiner
 {
@@ -23,7 +22,23 @@ namespace Examiner
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //services.AddDbContext<ExaminerDbContext>(options =>
+            //{
+            //    options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+            //});
+
+            //services.AddIdentity<User, Role>(
+            //    opts =>
+            //    {
+            //        opts.Password.RequiredLength = 8;
+            //        opts.Password.RequireNonAlphanumeric = true;
+            //        opts.Password.RequireLowercase = true;
+            //        opts.Password.RequireUppercase = true;
+            //        opts.Password.RequireDigit = true;
+            //    }
+            //    )
+            //    .AddEntityFrameworkStores<ExaminerDbContext>();
+            //services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

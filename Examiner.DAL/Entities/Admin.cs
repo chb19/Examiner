@@ -7,5 +7,6 @@ namespace Examiner.DAL.Models
 {
     public class Admin : User
     {
+
     }
 }
