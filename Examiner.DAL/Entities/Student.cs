@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Student : User
     {
@@ -12,15 +12,16 @@ namespace Examiner.DAL.Models
         [MaxLength(30)]
         [StringLength(255)]
         public string GradeBook { get; set; }
-        public virtual ICollection<Group> Groups { get; set; }
-        public virtual ICollection<Archive> Archives { get; set; }
-        public virtual ICollection<TestResult> TestResults { get; set; }
+        public List<GroupStudent> GroupStudents { get; set; }
+        public List<ArchiveStudent> ArchiveStudents { get; set; }
+        public List<TestResult> TestResults { get; set; }
         public Guid GroupId { get; set; }
         public Guid ArchiveId { get; set; }
         public Student()
         {
-            Groups = new List<Group>();
-            Archives = new List<Archive>();
+            GroupStudents = new List<GroupStudent>();
+            ArchiveStudents = new List<ArchiveStudent>();
+            TestResults = new List<TestResult>(); 
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class User : IdentityUser<Guid>
     {

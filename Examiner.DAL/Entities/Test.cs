@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Test : AbstractEntity
     {
-        public virtual ICollection<Question> Questions { get; set; }
-        public virtual ICollection<TestResult> TestResults { get; set; }
-        public virtual ICollection<Group> Groups { get; set; }
+        public List<Question> Questions { get; set; }
+        public List<TestResult> TestResults { get; set; }
+        public List<GroupTest> GroupTests { get; set; }
         public Guid GroupId { get; set; }
         public Guid TeacherId { get; set; }
         public Teacher Teacher { get; set; }
@@ -18,7 +18,7 @@ namespace Examiner.DAL.Models
         {
             Questions = new List<Question>();
             TestResults = new List<TestResult>();
-            Groups = new List<Group>();
+            GroupTests = new List<GroupTest>();
         }
     }
 }

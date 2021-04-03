@@ -1,17 +1,18 @@
 ﻿using Examiner.DAL.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Examiner.DAL.Entities
 {
-    public class TestResult : AbstractEntity
+    public class GroupStudent : AbstractEntity
     {
-        public int Grade { get; set; }
+        public Guid GroupId { get; set; }
         public Guid StudentId { get; set; }
-        public Guid TestId { get; set; }
-
-        public Test Test { get; set; }
+        public Group Group { get; set; }
         public Student Student { get; set; }
+
     }
 }

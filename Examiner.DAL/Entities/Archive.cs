@@ -3,18 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Archive : AbstractEntity
     {
-        public virtual ICollection<Answer> Answers { get; set; }
-        public virtual ICollection<Student> Students { get; set; }
+        public List<AnswerArchive> AnswerArchives { get; set; }
+        public List<ArchiveStudent> ArchiveStudents { get; set; }
         public Guid AnswerId { get; set; }
         public Guid StudentId { get; set; }
         public Archive()
         {
-            Answers = new List<Answer>();
-            Students = new List<Student>();
+            AnswerArchives = new List<AnswerArchive>();
+            ArchiveStudents = new List<ArchiveStudent>();
         }
     }
 }

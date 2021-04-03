@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Answer : AbstractEntity
     {
-        public virtual ICollection<Archive> Archives { get; set; }
+        public List<AnswerArchive> AnswerArchives { get; set; }
         [Required]
         public string AnswerText { get; set; }
 
@@ -17,5 +17,10 @@ namespace Examiner.DAL.Models
         public Guid ArchiveId { get; set; }
         public Guid QuestionId { get; set; }
         public DateTime AnswerDate { get; set; }
+
+        public Answer()
+        {
+            AnswerArchives = new List<AnswerArchive>();
+        }
     }
 }

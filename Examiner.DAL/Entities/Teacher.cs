@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Teacher : User
     {
@@ -12,8 +12,8 @@ namespace Examiner.DAL.Models
         [MaxLength(30)]
         [StringLength(255)]
         public string Department { get; set; }
-        public virtual ICollection<Group> Groups { get; set; }
-        public virtual ICollection<Test> Tests { get; set; }
+        public List<Group> Groups { get; set; }
+        public List<Test> Tests { get; set; }
         
         public Teacher()
         {

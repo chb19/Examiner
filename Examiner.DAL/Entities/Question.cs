@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Examiner.DAL.Abstractions;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Question : AbstractEntity
     {

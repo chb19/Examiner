@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Examiner.DAL.Models
+namespace Examiner.DAL.Entities
 {
     public class Role : IdentityRole<Guid>
     {

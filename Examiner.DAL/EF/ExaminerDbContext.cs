@@ -1,34 +1,20 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Examiner.DAL.Models;
-using Microsoft.VisualStudio.Services.UserAccountMapping;
-using Microsoft.AspNetCore.Identity;
+using Examiner.DAL.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Examiner.DAL.EF
 {
     public class ExaminerDbContext : IdentityDbContext<User, Role, Guid>
     {
-        /*        public ExaminerDbContext(DbContextOptions<ExaminerDbContext> options)
-                    : base(options)
-                {
-                }
-        */
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=examiner;Username=postgres;Password=kekmem");
+
+        public ExaminerDbContext()
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=examiner;Username=postgres;Password=password");
-            }
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
-        /*        public ExaminerDbContext()
-                {
-                    Database.EnsureDeleted();   
-                    Database.EnsureCreated();
-                }
-        */
-        public DbSet<User> Users { get; set; }
+
         public DbSet<Archive> Archives { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Answer> Answers { get; set; }
