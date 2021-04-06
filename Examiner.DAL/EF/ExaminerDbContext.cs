@@ -7,7 +7,8 @@ namespace Examiner.DAL.EF
 {
     public class ExaminerDbContext : IdentityDbContext<User, Role, Guid>
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=examiner;Username=postgres;Password=kekmem");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+            optionsBuilder.UseNpgsql($"Host=localhost;Port=5432;Database=examiner;Username=postgres;Password={Environment.GetEnvironmentVariable("EXAMINER_DB_PASSWORD")}");
 
         public ExaminerDbContext()
         {
