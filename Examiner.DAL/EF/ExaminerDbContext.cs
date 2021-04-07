@@ -10,12 +10,12 @@ namespace Examiner.DAL.EF
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
             optionsBuilder.UseNpgsql($"Host=localhost;Port=5432;Database=examiner;Username=postgres;Password={Environment.GetEnvironmentVariable("EXAMINER_DB_PASSWORD")}");
 
-        public ExaminerDbContext()
+        public ExaminerDbContext(DbContextOptions<ExaminerDbContext> options) : base(options)
         {
-            Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
-
+        public DbSet<User> Users_ { get; set; }
         public DbSet<Archive> Archives { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Answer> Answers { get; set; }

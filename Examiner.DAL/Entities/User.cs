@@ -10,7 +10,6 @@ namespace Examiner.DAL.Entities
         [MaxLength(30)]
         [StringLength(255)]
         public string FirstName { get; set; }
-
         [Required]
         [MaxLength(30)]
         [StringLength(255)]
