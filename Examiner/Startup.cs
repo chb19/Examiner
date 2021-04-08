@@ -1,3 +1,5 @@
+using Examiner.BLL.Interfaces;
+using Examiner.BLL.Services;
 using Examiner.DAL.EF;
 using Examiner.DAL.Entities;
 using Microsoft.AspNetCore.Builder;
@@ -38,6 +40,7 @@ namespace Examiner
                 )
                 .AddEntityFrameworkStores<ExaminerDbContext>();
             services.AddControllersWithViews();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

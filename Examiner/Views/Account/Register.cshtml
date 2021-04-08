@@ -1,0 +1,50 @@
+﻿@model Examiner.BLL.DTO.UserDTO
+<h2>Register</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="Email">Email:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="Email" class="form-control" type="email" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="FirstName">Name:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="FirstName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="LastName">Surname:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="LastName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="Password">Password:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="Password" class="form-control" type="password" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="Password">Confirm password:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="Password" class="form-control" type="password" />
+        </div>
+    </div>
+    <div>
+        <div class="col-lg-2">
+            <input type="submit" class="btn badge-info" value="Register" />
+        </div>
+    </div>
+</form>

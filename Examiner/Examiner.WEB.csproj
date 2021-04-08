@@ -13,10 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Examiner.BLL\Examiner.BLL.csproj" />
     <ProjectReference Include="..\Examiner.DAL\Examiner.DAL.csproj" />
   </ItemGroup>
 
