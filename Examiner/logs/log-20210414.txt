@@ -1,0 +1,21 @@
+2021-04-14 21:39:44.800 +03:00 [INF] Starting web host
+2021-04-14 21:39:47.195 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-14 21:39:47.203 +03:00 [INF] Hosting environment: Development
+2021-04-14 21:39:47.204 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-14 21:39:56.803 +03:00 [INF] User chikh.bdn@gmail.com logged in.
+2021-04-14 21:56:19.582 +03:00 [INF] Starting web host
+2021-04-14 21:56:21.797 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-14 21:56:21.806 +03:00 [INF] Hosting environment: Development
+2021-04-14 21:56:21.808 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-14 21:56:39.879 +03:00 [INF] User chikh.bdn@gmail.com logged in.
+2021-04-14 21:57:00.289 +03:00 [WRN] User validation failed: DuplicateUserName.
+2021-04-14 21:57:00.291 +03:00 [ERR] Failed Examiner.WEB.ViewModels.RegisterViewModel to register.
+2021-04-14 22:00:01.268 +03:00 [INF] Starting web host
+2021-04-14 22:00:02.985 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-14 22:00:02.996 +03:00 [INF] Hosting environment: Development
+2021-04-14 22:00:02.997 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-14 22:01:02.075 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-14 22:01:02.084 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-14 22:01:02.086 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-14 22:01:02.396 +03:00 [INF] User q@q.q registered.
+2021-04-14 22:01:21.211 +03:00 [INF] User q@q.q logged in.

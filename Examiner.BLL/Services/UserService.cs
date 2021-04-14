@@ -39,6 +39,9 @@ namespace Examiner.BLL.Services
             var result = await _userManager.CreateAsync(user, userDTO.Password);
             if (result.Succeeded)
             {
+                var res = await _roleManager.CreateAsync(new Role("Student"));
+                res = await _roleManager.CreateAsync(new Role("Admin"));
+                res = await _roleManager.CreateAsync(new Role("Teacher"));
                 result = await _userManager.AddToRoleAsync(user, "Student");
                 if (result.Succeeded)
                 {

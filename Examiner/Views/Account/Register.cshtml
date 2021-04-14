@@ -1,4 +1,4 @@
-﻿@model Examiner.BLL.DTO.UserDTO
+﻿@model Examiner.WEB.ViewModels.RegisterViewModel
 <h2>Register</h2>
 <form method="post" asp-controller="Account" asp-action="Register">
     <div asp-validation-summary="ModelOnly"></div>
@@ -36,10 +36,10 @@
     </div>
     <div class="form-group row">
         <div class="col-lg-1">
-            <label asp-for="Password">Confirm password:</label>
+            <label asp-for="PasswordConfirm">Confirm password:</label>
         </div>
         <div class="col-3">
-            <input asp-for="Password" class="form-control" type="password" />
+            <input asp-for="PasswordConfirm" class="form-control" type="password" />
         </div>
     </div>
     <div>

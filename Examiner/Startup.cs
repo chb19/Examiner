@@ -4,10 +4,14 @@ using Examiner.DAL.EF;
 using Examiner.DAL.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
 
 namespace Examiner
 {
@@ -17,7 +21,6 @@ namespace Examiner
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,10 +39,10 @@ namespace Examiner
                     opts.Password.RequireLowercase = true;
                     opts.Password.RequireUppercase = true;
                     opts.Password.RequireDigit = true;
-                }
-                )
+                })
                 .AddEntityFrameworkStores<ExaminerDbContext>();
             services.AddControllersWithViews();
+            services.AddScoped<ILoggerService, LoggerService>();
             services.AddScoped<IUserService, UserService>();
         }
 
@@ -56,6 +59,7 @@ namespace Examiner
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseSerilogRequestLogging();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -63,6 +67,19 @@ namespace Examiner
 
             app.UseAuthorization();
             app.UseAuthentication();
+
+            app.UseSerilogRequestLogging(options =>
+            {
+                options.MessageTemplate = "Handled {RequestPath}";
+
+                options.GetLevel = (httpContext, elapsed, ex) => LogEventLevel.Debug;
+
+                options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+                {
+                    diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
+                    diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
+                };
+            });
 
             app.UseEndpoints(endpoints =>
             {

@@ -15,13 +15,13 @@ namespace Examiner.WEB.ViewModels
 
         [Required]
         [StringLength(47, MinimumLength = 3)]
-        [Display(Name = "Name")]
-        public string Name { get; set; }
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(47, MinimumLength = 3)]
-        [Display(Name = "Surname")]
-        public string Surname { get; set; }
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -34,7 +34,5 @@ namespace Examiner.WEB.ViewModels
         [Display(Name = "Confirm password")]
         public string PasswordConfirm { get; set; }
 
-        [Required]
-        public string Role { get; set; }
     }
 }

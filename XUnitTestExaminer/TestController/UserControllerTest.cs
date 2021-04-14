@@ -15,8 +15,8 @@ namespace XUnitTestExaminer.TestService
 {
     public class UserControllerTest
     {
-        [Fact]
-        public void LoginViewResultNotNull()
+/*        [Fact]*//**/
+/*        public void LoginViewResultNotNull()
         {
             AccountController controller = new AccountController();
             ViewResult result = controller.Login() as ViewResult;
@@ -30,5 +30,6 @@ namespace XUnitTestExaminer.TestService
             Assert.NotNull(result);
         }
 
+*/    
     }
 }
