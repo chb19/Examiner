@@ -13,6 +13,6 @@ namespace Examiner.BLL.Interfaces
         Task<IdentityResult> Create(UserDTO userDTO);
         Task<SignInResult> Authenticate(UserDTO userDTO);
         Task SignOut();
-/*        Task SetInitialData(UserDTO adminDto, List<string> roles);
-*/    }
+
+    }
 }

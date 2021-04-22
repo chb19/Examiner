@@ -1,7 +1,8 @@
-using Examiner.BLL.Interfaces;
+﻿using Examiner.BLL.Interfaces;
 using Examiner.BLL.Services;
 using Examiner.DAL.EF;
 using Examiner.DAL.Entities;
+using Examiner.DAL.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLayerApp.DAL.Repositories;
 using Serilog;
 using Serilog.Events;
 

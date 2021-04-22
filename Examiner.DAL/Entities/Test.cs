@@ -14,6 +14,7 @@ namespace Examiner.DAL.Entities
         public Guid TeacherId { get; set; }
         public Teacher Teacher { get; set; }
         public Group Group { get; set; }
+        public string Title { get; set; }
         public Test()
         {
             Questions = new List<Question>();

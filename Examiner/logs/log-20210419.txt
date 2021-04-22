@@ -1,0 +1,48 @@
+2021-04-19 15:48:11.752 +03:00 [INF] Starting web host
+2021-04-19 15:48:14.356 +03:00 [FTL] Host terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Examiner.DAL.Interfaces.IUnitOfWork Lifetime: Scoped ImplementationType: NLayerApp.DAL.Repositories.EFUnitOfWork': Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Examiner.DAL.Interfaces.IUnitOfWork Lifetime: Scoped ImplementationType: NLayerApp.DAL.Repositories.EFUnitOfWork': Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Examiner.Program.Main(String[] args) in C:\Users\chikh\source\repos\Examiner\Examiner\Program.cs:line 29
+2021-04-19 15:48:45.156 +03:00 [INF] Starting web host
+2021-04-19 15:48:46.401 +03:00 [FTL] Host terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Examiner.DAL.Interfaces.IUnitOfWork Lifetime: Scoped ImplementationType: NLayerApp.DAL.Repositories.EFUnitOfWork': Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Examiner.DAL.Interfaces.IUnitOfWork Lifetime: Scoped ImplementationType: NLayerApp.DAL.Repositories.EFUnitOfWork': Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Examiner.DAL.Interfaces.IRepository`1[Examiner.DAL.Entities.User]' while attempting to activate 'NLayerApp.DAL.Repositories.EFUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Examiner.Program.Main(String[] args) in C:\Users\chikh\source\repos\Examiner\Examiner\Program.cs:line 29
+2021-04-19 15:49:19.987 +03:00 [INF] Starting web host
+2021-04-19 15:49:21.691 +03:00 [INF] Now listening on: https://localhost:5001
+2021-04-19 15:49:21.694 +03:00 [INF] Now listening on: http://localhost:5000
+2021-04-19 15:49:21.695 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-19 15:49:21.695 +03:00 [INF] Hosting environment: Development
+2021-04-19 15:49:21.695 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner

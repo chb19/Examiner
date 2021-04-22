@@ -1,0 +1,39 @@
+2021-04-15 14:30:13.709 +03:00 [INF] Starting web host
+2021-04-15 14:30:15.831 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 14:30:15.840 +03:00 [INF] Hosting environment: Development
+2021-04-15 14:30:15.841 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 14:44:05.409 +03:00 [INF] Starting web host
+2021-04-15 14:44:07.386 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 14:44:07.392 +03:00 [INF] Hosting environment: Development
+2021-04-15 14:44:07.393 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 14:44:30.073 +03:00 [INF] User chikh.bdn@gmail.com logged in.
+2021-04-15 14:45:14.118 +03:00 [INF] Starting web host
+2021-04-15 14:45:15.730 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 14:45:15.733 +03:00 [INF] Hosting environment: Development
+2021-04-15 14:45:15.734 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 14:45:47.600 +03:00 [INF] User chikh.bdn@gmail.com logged in.
+2021-04-15 15:15:52.270 +03:00 [INF] Starting web host
+2021-04-15 15:15:54.491 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 15:15:54.505 +03:00 [INF] Hosting environment: Development
+2021-04-15 15:15:54.506 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 15:16:17.344 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 15:16:17.351 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 15:16:17.353 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 15:16:17.644 +03:00 [INF] User chikh.b@gmail.com registered.
+2021-04-15 17:46:08.284 +03:00 [INF] Starting web host
+2021-04-15 17:46:12.650 +03:00 [INF] Now listening on: https://localhost:5001
+2021-04-15 17:46:12.654 +03:00 [INF] Now listening on: http://localhost:5000
+2021-04-15 17:46:12.654 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 17:46:12.654 +03:00 [INF] Hosting environment: Development
+2021-04-15 17:46:12.654 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 17:46:53.017 +03:00 [INF] Starting web host
+2021-04-15 17:46:55.518 +03:00 [INF] Now listening on: https://localhost:5001
+2021-04-15 17:46:55.523 +03:00 [INF] Now listening on: http://localhost:5000
+2021-04-15 17:46:55.523 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-15 17:46:55.524 +03:00 [INF] Hosting environment: Development
+2021-04-15 17:46:55.524 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-04-15 17:47:17.619 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 17:47:17.626 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 17:47:17.628 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-04-15 17:47:17.986 +03:00 [INF] User chikh.bdnb@gmail.com registered.
+2021-04-15 17:47:29.598 +03:00 [INF] User chikh.bdnb@gmail.com logged in.
