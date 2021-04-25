@@ -14,7 +14,6 @@ namespace NLayerApp.DAL.Repositories
 
         public IRepository<User> Users { get; }
         public IRepository<Group> Groups { get; }
-        public IRepository<Archive> Archives { get; }
         public IRepository<Answer> Answers { get; }
         public IRepository<TestResult> TestResults { get; }
         public IRepository<Question> Questions { get; }
@@ -24,7 +23,6 @@ namespace NLayerApp.DAL.Repositories
             ExaminerDbContext dbContext,
             IRepository<User> userRepository,
             IRepository<Group> groupRepository,
-            IRepository<Archive> archiveRepository,
             IRepository<Test> testRepository,
             IRepository<Answer> answerRepository,
             IRepository<TestResult> testResultRepository,
@@ -37,7 +35,6 @@ namespace NLayerApp.DAL.Repositories
             TestResults = testResultRepository;
             Questions = questionRepository;
             Answers = answerRepository;
-            Archives = archiveRepository;
         }
 
         public void Save()

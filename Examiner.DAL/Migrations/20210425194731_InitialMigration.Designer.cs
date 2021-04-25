@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Examiner.DAL.Migrations
 {
     [DbContext(typeof(ExaminerDbContext))]
-    [Migration("20210403095824_InitialMigration")]
+    [Migration("20210425194731_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,9 +34,6 @@ namespace Examiner.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("ArchiveId")
-                        .HasColumnType("uuid");
-
                     b.Property<bool>("Correctness")
                         .HasColumnType("boolean");
 
@@ -51,7 +48,7 @@ namespace Examiner.DAL.Migrations
                     b.ToTable("Answers");
                 });
 
-            modelBuilder.Entity("Examiner.DAL.Entities.AnswerArchive", b =>
+            modelBuilder.Entity("Examiner.DAL.Entities.AnswerStudent", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,54 +57,16 @@ namespace Examiner.DAL.Migrations
                     b.Property<Guid>("AnswerId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("ArchiveId")
+                    b.Property<Guid>("StudentId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AnswerId");
 
-                    b.HasIndex("ArchiveId");
-
-                    b.ToTable("AnswerArchive");
-                });
-
-            modelBuilder.Entity("Examiner.DAL.Entities.Archive", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AnswerId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Archives");
-                });
-
-            modelBuilder.Entity("Examiner.DAL.Entities.ArchiveStudent", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("ArchiveId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArchiveId");
-
                     b.HasIndex("StudentId");
 
-                    b.ToTable("ArchiveStudent");
+                    b.ToTable("AnswerStudent");
                 });
 
             modelBuilder.Entity("Examiner.DAL.Entities.Group", b =>
@@ -238,6 +197,9 @@ namespace Examiner.DAL.Migrations
 
                     b.Property<Guid>("TeacherId")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -458,9 +420,6 @@ namespace Examiner.DAL.Migrations
                 {
                     b.HasBaseType("Examiner.DAL.Entities.User");
 
-                    b.Property<Guid>("ArchiveId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("GradeBook")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -493,40 +452,21 @@ namespace Examiner.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Examiner.DAL.Entities.AnswerArchive", b =>
+            modelBuilder.Entity("Examiner.DAL.Entities.AnswerStudent", b =>
                 {
                     b.HasOne("Examiner.DAL.Entities.Answer", "Answer")
-                        .WithMany("AnswerArchives")
+                        .WithMany("AnswerStudents")
                         .HasForeignKey("AnswerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Examiner.DAL.Entities.Archive", "Archive")
-                        .WithMany("AnswerArchives")
-                        .HasForeignKey("ArchiveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Answer");
-
-                    b.Navigation("Archive");
-                });
-
-            modelBuilder.Entity("Examiner.DAL.Entities.ArchiveStudent", b =>
-                {
-                    b.HasOne("Examiner.DAL.Entities.Archive", "Archive")
-                        .WithMany("ArchiveStudents")
-                        .HasForeignKey("ArchiveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Examiner.DAL.Entities.Student", "Student")
-                        .WithMany("ArchiveStudents")
+                        .WithMany("AnswerStudents")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Archive");
+                    b.Navigation("Answer");
 
                     b.Navigation("Student");
                 });
@@ -680,14 +620,7 @@ namespace Examiner.DAL.Migrations
 
             modelBuilder.Entity("Examiner.DAL.Entities.Answer", b =>
                 {
-                    b.Navigation("AnswerArchives");
-                });
-
-            modelBuilder.Entity("Examiner.DAL.Entities.Archive", b =>
-                {
-                    b.Navigation("AnswerArchives");
-
-                    b.Navigation("ArchiveStudents");
+                    b.Navigation("AnswerStudents");
                 });
 
             modelBuilder.Entity("Examiner.DAL.Entities.Group", b =>
@@ -714,7 +647,7 @@ namespace Examiner.DAL.Migrations
 
             modelBuilder.Entity("Examiner.DAL.Entities.Student", b =>
                 {
-                    b.Navigation("ArchiveStudents");
+                    b.Navigation("AnswerStudents");
 
                     b.Navigation("GroupStudents");
 

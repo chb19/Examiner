@@ -13,14 +13,13 @@ namespace Examiner.DAL.Entities
         [StringLength(255)]
         public string GradeBook { get; set; }
         public List<GroupStudent> GroupStudents { get; set; }
-        public List<ArchiveStudent> ArchiveStudents { get; set; }
+        public List<AnswerStudent> AnswerStudents { get; set; }
         public List<TestResult> TestResults { get; set; }
         public Guid GroupId { get; set; }
-        public Guid ArchiveId { get; set; }
         public Student()
         {
             GroupStudents = new List<GroupStudent>();
-            ArchiveStudents = new List<ArchiveStudent>();
+            AnswerStudents = new List<AnswerStudent>();
             TestResults = new List<TestResult>(); 
         }
     }
