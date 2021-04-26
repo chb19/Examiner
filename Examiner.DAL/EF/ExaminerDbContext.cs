@@ -11,7 +11,7 @@ namespace Examiner.DAL.EF
 
         public ExaminerDbContext(DbContextOptions<ExaminerDbContext> options) : base(options)
         {
-            Database.EnsureDeleted();
+/*            Database.EnsureDeleted();*/
             Database.EnsureCreated();
         }
         public DbSet<User> Users_ { get; set; }
@@ -20,5 +20,8 @@ namespace Examiner.DAL.EF
         public DbSet<Question> Questions { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<TestResult> TestResults { get; set; }
+        public DbSet<AnswerStudent> AnswerStudents { get; set; }
+        public DbSet<GroupStudent> GroupStudents { get; set; }
+        public DbSet<GroupTest> GroupTests { get; set; }
     }
 }

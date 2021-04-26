@@ -18,6 +18,9 @@ namespace NLayerApp.DAL.Repositories
         public IRepository<TestResult> TestResults { get; }
         public IRepository<Question> Questions { get; }
         public IRepository<Test> Tests { get; }
+        public IRepository<GroupStudent> GroupStudents { get; }
+        public IRepository<GroupTest> GroupTests { get; }
+        public IRepository<AnswerStudent> AnswerStudents { get; }
 
         public EFUnitOfWork(
             ExaminerDbContext dbContext,
@@ -26,7 +29,11 @@ namespace NLayerApp.DAL.Repositories
             IRepository<Test> testRepository,
             IRepository<Answer> answerRepository,
             IRepository<TestResult> testResultRepository,
-            IRepository<Question> questionRepository)
+            IRepository<Question> questionRepository,
+            IRepository<GroupStudent> groupStudentRepository,
+            IRepository<GroupTest> groupTestRepository,
+            IRepository<AnswerStudent> answerStudentRepository
+            )
         {
             _dbContext = dbContext;
             Users = userRepository;
@@ -35,6 +42,9 @@ namespace NLayerApp.DAL.Repositories
             TestResults = testResultRepository;
             Questions = questionRepository;
             Answers = answerRepository;
+            GroupStudents = groupStudentRepository;
+            GroupTests = groupTestRepository;
+            AnswerStudents = answerStudentRepository;
         }
 
         public void Save()

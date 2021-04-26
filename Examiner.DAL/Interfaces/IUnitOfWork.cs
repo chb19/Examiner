@@ -14,6 +14,9 @@ namespace Examiner.DAL.Interfaces
         IRepository<TestResult> TestResults { get; }
         IRepository<Question> Questions { get; }
         IRepository<Test> Tests { get; }
+        IRepository<AnswerStudent> AnswerStudents { get; }
+        IRepository<GroupStudent> GroupStudents { get; }
+        IRepository<GroupTest> GroupTests { get; }
         void Save();
     }
 }
