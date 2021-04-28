@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
-using NLayerApp.DAL.Repositories;
+using Examiner.DAL.Interfaces;
+using Examiner.DAL.Repositories;
 
 namespace Examiner.BLL.Services
 {
     public class QuestionService : IQuestionService
     {
-        private EFUnitOfWork _repository;
+        private IUnitOfWork _repository;
 
         public async Task<Question> EditQuestionAnswer(Guid questionId, Answer newQuestionAnswer)
         {

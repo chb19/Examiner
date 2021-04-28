@@ -10,5 +10,7 @@ namespace Examiner.BLL.DTO
     {
         public Guid Id;
         public string Title { get; set; }
+        public Guid TeacherId { get; set; }
+        public Guid StudentId { get; set; }
     }
 }

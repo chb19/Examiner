@@ -44,6 +44,7 @@ namespace Examiner.DAL.Repositories
         public void Create(Group Group)
         {
             _dbContext.Groups.Add(Group);
+            Save();
         }
 
         public void Update(Group Group)

@@ -11,8 +11,8 @@ namespace Examiner.BLL.Interfaces
 {
     public interface ITeacherService
     {
-        Task<IEnumerable<Test>> GetAllTests();
-        Task<IEnumerable<Group>> GetAllGroups();
+        Task<IEnumerable<Test>> GetAllUserTests(Guid userId);
+        Task<IEnumerable<Group>> GetAllUserGroups(Guid userId);
         Task<Test> GetSpecificTest(Guid testId);
         Task CreateTest(TestDTO testDto);
         Task DeleteTest(Guid testId);

@@ -6,30 +6,27 @@ using System.Threading.Tasks;
 using Examiner.BLL.DTO;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
-using NLayerApp.DAL.Repositories;
+using Examiner.DAL.Interfaces;
+using Examiner.DAL.Repositories;
 
 namespace Examiner.BLL.Services
 {
     public class TeacherService : ITeacherService
     {
-        private EFUnitOfWork _repository;
-        public TeacherService(EFUnitOfWork repository)
+        private IUnitOfWork _repository;
+        public TeacherService(IUnitOfWork repository)
         {
             _repository = repository;
-        }
-        public async Task AddStudentToGroup(Guid studentId, Guid GroupId)
-        {
-
         }
 
         public async Task CreateGroup(GroupDTO groupDto)
         {
-            await Task.Run(() => _repository.Groups.Create(new Group { Title = groupDto.Title } ));
+            await Task.Run(() => _repository.Groups.Create(new Group { Title = groupDto.Title, TeacherId = groupDto.TeacherId } ));
         }
 
         public async Task CreateTest(TestDTO testDto)
         {
-            await Task.Run(() => _repository.Tests.Create(new Test { Title = testDto.Title }));
+            await Task.Run(() => _repository.Tests.Create(new Test { Title = testDto.Title, TeacherId = testDto.TeacherId }));
         }
 
         public async Task DeleteTest(Guid testId)
@@ -43,16 +40,16 @@ namespace Examiner.BLL.Services
             test.Title = newTitle;
             await Task.Run(() => _repository.Tests.Update(test));
         }
-        public async Task<IEnumerable<Test>> GetAllTests()
+        public async Task<IEnumerable<Test>> GetAllUserTests(Guid userId)
         {
             return await Task.Run(() =>
-                _repository.Tests.GetAll()
+                _repository.Tests.GetAll().Where(x => x.TeacherId == userId).ToList()
             ); 
         }
-        public async Task<IEnumerable<Group>> GetAllGroups()
+        public async Task<IEnumerable<Group>> GetAllUserGroups(Guid userId)
         {
             return await Task.Run(() =>
-                _repository.Groups.GetAll()
+                _repository.Groups.GetAll().Where(x => x.TeacherId == userId).ToList()
             ); 
         }
 
@@ -61,6 +58,11 @@ namespace Examiner.BLL.Services
             return await Task.Run(() =>
                 _repository.Tests.Find(x => x.Id == testId).First()
             );
+        }
+
+        public Task AddStudentToGroup(Guid studentId, Guid GroupId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

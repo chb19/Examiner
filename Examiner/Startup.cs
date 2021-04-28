@@ -3,6 +3,7 @@ using Examiner.BLL.Services;
 using Examiner.DAL.EF;
 using Examiner.DAL.Entities;
 using Examiner.DAL.Interfaces;
+using Examiner.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,7 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NLayerApp.DAL.Repositories;
 using Serilog;
 using Serilog.Events;
 
@@ -44,9 +44,21 @@ namespace Examiner
                 })
                 .AddEntityFrameworkStores<ExaminerDbContext>();
             services.AddControllersWithViews();
+
+            services.AddScoped<IRepository<Answer>, AnswerRepository>();
+            services.AddScoped<IRepository<AnswerStudent>, AnswerStudentRepository>();
+            services.AddScoped<IRepository<Group>, GroupRepository>();
+            services.AddScoped<IRepository<GroupStudent>, GroupStudentRepository>();
+            services.AddScoped<IRepository<GroupTest>, GroupTestRepository>();
+            services.AddScoped<IRepository<Question>, QuestionRepository>();
+            services.AddScoped<IRepository<Test>, TestRepository>();
+            services.AddScoped<IRepository<TestResult>, TestResultRepository>();
+            services.AddScoped<IRepository<User>, UserRepository>();
             services.AddScoped<ILoggerService, LoggerService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdministrationService, AdministrationService>();
+            services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IUnitOfWork, EFUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

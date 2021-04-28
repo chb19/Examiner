@@ -4,7 +4,7 @@ using Examiner.DAL.Entities;
 using Examiner.DAL.Interfaces;
 using Examiner.DAL.Repositories;
 
-namespace NLayerApp.DAL.Repositories
+namespace Examiner.DAL.Repositories
 {
     public class EFUnitOfWork : IUnitOfWork
     {

@@ -10,6 +10,8 @@ namespace Examiner.BLL.DTO
     public class TestDTO
     {
         public Guid Id { get; set; }
+        public Guid TeacherId { get; set; }
+        public Guid StudentId { get; set; }
         public string Title { get; set; }
         public List<Question> Questions { get; set; }
         public List<TestResult> TestResults { get; set; }
