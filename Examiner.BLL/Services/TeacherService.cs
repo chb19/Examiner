@@ -60,9 +60,31 @@ namespace Examiner.BLL.Services
             );
         }
 
-        public Task AddStudentToGroup(Guid studentId, Guid GroupId)
+        public async Task AddStudentToGroup(Guid studentId, Guid GroupId)
         {
-            throw new NotImplementedException();
+            Group group = _repository.Groups.Find(g => g.Id == GroupId).First();
+
+            foreach (var gs in group.GroupStudents)
+            {
+                if (gs.StudentId == studentId)
+                    return;
+            }
+
+            Student student = _repository.Users.Find(s => s.Id == studentId).First() as Student;
+
+            var groupStudent = new GroupStudent
+            {
+                GroupId = GroupId,
+                StudentId = studentId,
+                Group = group,
+                Student = student
+            };
+
+            group.GroupStudents.Add(groupStudent);
+            student.GroupStudents.Add(groupStudent);
+
+            await Task.Run(() => _repository.Users.Update(student));
+            await Task.Run(() => _repository.Groups.Update(group));
         }
     }
 }
