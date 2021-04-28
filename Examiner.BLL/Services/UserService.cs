@@ -35,7 +35,7 @@ namespace Examiner.BLL.Services
 
         public async Task<IdentityResult> Create(UserDTO userDTO)
         {
-            User user = new User { Email = userDTO.Email, UserName = userDTO.Email, FirstName = userDTO.FirstName, LastName = userDTO.LastName };
+            User user = new User { Role = "Student", Email = userDTO.Email, UserName = userDTO.Email, FirstName = userDTO.FirstName, LastName = userDTO.LastName };
             var result = await _userManager.CreateAsync(user, userDTO.Password);
             if (result.Succeeded)
             {
@@ -51,7 +51,6 @@ namespace Examiner.BLL.Services
             }
             return result;
         }
-
         public async Task SignOut()
         {
             await _signInManager.SignOutAsync();

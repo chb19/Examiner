@@ -14,6 +14,7 @@ namespace Examiner.DAL.Entities
         [MaxLength(30)]
         [StringLength(255)]
         public string LastName { get; set; }
+        public string Role { get; set; }
     }
 }
 

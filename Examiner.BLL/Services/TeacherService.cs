@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Examiner.BLL.DTO;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
 using NLayerApp.DAL.Repositories;
@@ -11,40 +12,55 @@ namespace Examiner.BLL.Services
 {
     public class TeacherService : ITeacherService
     {
-        EFUnitOfWork _repository;
+        private EFUnitOfWork _repository;
+        public TeacherService(EFUnitOfWork repository)
+        {
+            _repository = repository;
+        }
         public async Task AddStudentToGroup(Guid studentId, Guid GroupId)
         {
-            throw new NotImplementedException();
+
         }
 
-        public async Task<Group> CreateGroup(Group group)
+        public async Task CreateGroup(GroupDTO groupDto)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => _repository.Groups.Create(new Group { Title = groupDto.Title } ));
         }
 
-        public async Task<Test> CreateTest(Test test)
+        public async Task CreateTest(TestDTO testDto)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => _repository.Tests.Create(new Test { Title = testDto.Title }));
         }
 
         public async Task DeleteTest(Guid testId)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => _repository.Tests.Delete(testId));
         }
 
-        public async Task<Test> EditTest(Guid testId, Test newTest)
+        public async Task EditTest(Guid testId, string newTitle)
         {
-            throw new NotImplementedException();
+            var test = _repository.Tests.Find(x => x.Id == testId).First();
+            test.Title = newTitle;
+            await Task.Run(() => _repository.Tests.Update(test));
         }
-
         public async Task<IEnumerable<Test>> GetAllTests()
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+                _repository.Tests.GetAll()
+            ); 
+        }
+        public async Task<IEnumerable<Group>> GetAllGroups()
+        {
+            return await Task.Run(() =>
+                _repository.Groups.GetAll()
+            ); 
         }
 
         public async Task<Test> GetSpecificTest(Guid testId)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+                _repository.Tests.Find(x => x.Id == testId).First()
+            );
         }
     }
 }
