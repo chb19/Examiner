@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Examiner.BLL.DTO;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
+using Examiner.DAL.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
 namespace Examiner.BLL.Services
@@ -13,9 +14,11 @@ namespace Examiner.BLL.Services
     public class AdministrationService : IAdministrationService
     {
         UserManager<User> _userManager;
-        public AdministrationService(UserManager<User> userManager)
+        private IUnitOfWork _repository;
+        public AdministrationService(IUnitOfWork repository, UserManager<User> userManager)
         {
             _userManager = userManager;
+            _repository = repository;
         }
 
         public async Task<IdentityResult> DeleteUser(Guid userId)

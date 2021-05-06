@@ -1,4 +1,5 @@
-﻿using Examiner.BLL.Interfaces;
+﻿using System;
+using Examiner.BLL.Interfaces;
 using Examiner.BLL.Services;
 using Examiner.DAL.EF;
 using Examiner.DAL.Entities;
@@ -7,6 +8,8 @@ using Examiner.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,9 +44,36 @@ namespace Examiner
                     opts.Password.RequireLowercase = true;
                     opts.Password.RequireUppercase = true;
                     opts.Password.RequireDigit = true;
-                })
+                }
+                ).AddEntityFrameworkStores<ExaminerDbContext>();
+/*            services.ConfigureApplicationCookie(options => { //Cookie settings 
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5); 
+                options.LoginPath = "/Account/Login"; 
+                options.AccessDeniedPath = "/Account/AccessDenied"; 
+                options.SlidingExpiration = true; });
+
+*//*            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ExaminerDbContext>();
+*//*
+            services.Configure<IdentityOptions>(options => { // Password settings. 
+                options.Password.RequireDigit = true; 
+                options.Password.RequireLowercase = true; 
+                options.Password.RequireNonAlphanumeric = true; 
+                options.Password.RequireUppercase = true; 
+                options.Password.RequiredLength = 6; 
+                options.Password.RequiredUniqueChars = 1; 
+                // Lockout settings. 
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); 
+                options.Lockout.MaxFailedAccessAttempts = 5; 
+                options.Lockout.AllowedForNewUsers = true; 
+                // User settings. 
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+"; 
+                options.User.RequireUniqueEmail = false; 
+            });
+*/
             services.AddControllersWithViews();
+            services.AddAuthentication();
 
             services.AddScoped<IRepository<Answer>, AnswerRepository>();
             services.AddScoped<IRepository<AnswerStudent>, AnswerStudentRepository>();
@@ -56,6 +86,7 @@ namespace Examiner
             services.AddScoped<IRepository<User>, UserRepository>();
             services.AddScoped<ILoggerService, LoggerService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAdministrationService, AdministrationService>();
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<IUnitOfWork, EFUnitOfWork>();

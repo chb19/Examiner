@@ -1,0 +1,19 @@
+﻿@model Examiner.WEB.ViewModels.GroupViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <input type="hidden" name="groupId" value="@Model.Id" />
+        <label for="title">Edit group</label>
+        <input name="title" class="form-control col-lg-3" value="@Model.Title" />
+    </div>
+    <div class="form-row">
+        <div class="col-1">
+            <button type="submit" class="btn btn-primary form-control">Update</button>
+        </div>
+        <div class="col-1">
+            <a asp-action="Index" class="btn btn-success form-control">Back</a>
+        </div>
+    </div>
+</form>

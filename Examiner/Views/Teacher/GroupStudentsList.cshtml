@@ -1,0 +1,30 @@
+﻿@model Examiner.WEB.ViewModels.GroupViewModel
+<h2>Student list</h2>
+
+<div>
+    <div class="btn-group">
+        <a asp-controller="Teacher" asp-action="AddStudentToGroup" asp-route-groupId="@Model.Id" class="btn btn-success form-control">Add student</a>
+        <a asp-controller="Teacher" asp-action="Index" class="btn btn-light float-lg-right form-control offset-1">Back</a>
+    </div>
+</div>
+<div class="col-12 border p-3">
+    <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@section Scripts{
+    <script>
+        var groupId = "@Model.Id.ToString()";
+        var students = @Html.Raw(ViewData["students"]);
+    </script>
+    <script src="~/js/groupStudentsList.js"></script>
+}

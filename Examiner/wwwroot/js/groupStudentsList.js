@@ -6,32 +6,22 @@ $(document).ready(function () {
 
 function loadDataTable() {
     dataTable = $('#DT_load').DataTable({
-        "ajax": {
-            "url": `/teacher/grouplist/`,
-            "type": "GET",
-            "datatype": "json"
-        },
+        "data": students,
 
         "columns": [
-            { "data": "title", "width": "50%" },
+            { "data": "FirstName", "width": "30%" },
+            { "data": "LastName", "width": "30%" },
+            { "data": "Email", "width": "30%" },
             {
-                "data": "id",
+                "data": "Id",
                 "render": function (data) {
                     return `<div class="text-center">
-                    <a href="/teacher/edit?groupId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
-                        Edit
-                    </a>
-                    &nbsp;                    
-                    <a href="/teacher/GetGroupStudentsList/?groupId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
-                        Students
-                    </a>
-                    &nbsp;
-                    <a class='btn btn-danger text-white' style='cursor:pointer; width:80px;'
-                        onclick=Delete("/Teacher/DeleteGroup?groupId=${data}")>
+                    <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
+                        onclick=Delete("/Teacher/DeleteStudentFromGroup?groupId=${groupId}&studentId=${data}")>
                         Delete
                     </a>
                     </div>`;
-                }, "width": "20%"
+                }, "width": "10%"
             }
         ],
         "language": {
@@ -56,7 +46,7 @@ function Delete(url) {
                 success: function (data) {
                     if (data.success) {
                         toastr.success(data.message);
-                        dataTable.ajax.reload();
+                        location.reload(true);
                     }
                     else {
                         toastr.error(data.message);

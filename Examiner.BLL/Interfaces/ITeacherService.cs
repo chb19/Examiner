@@ -14,10 +14,17 @@ namespace Examiner.BLL.Interfaces
         Task<IEnumerable<Test>> GetAllUserTests(Guid userId);
         Task<IEnumerable<Group>> GetAllUserGroups(Guid userId);
         Task<Test> GetSpecificTest(Guid testId);
+        Task<Group> GetSpecificGroup(Guid groupId);
         Task CreateTest(TestDTO testDto);
         Task DeleteTest(Guid testId);
+        Task DeleteGroup(Guid groupId);
         Task EditTest(Guid testId, string newTitle);
+        Task EditGroup(Guid groupId, string newTitle);
         Task AddStudentToGroup(Guid studentId, Guid GroupId);
         Task CreateGroup(GroupDTO groupDto);
+        Task<IEnumerable<Student>> GetStudentsFromGroup(Guid groupId);
+        Task<List<User>> GetAllStudents();
+        Task DeleteStudentFromGroup(Guid studentId, Guid groupId);
+
     }
 }
