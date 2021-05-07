@@ -28,20 +28,20 @@ namespace Examiner.WEB.Controllers
         }
         public IActionResult Index()
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return View("AccessDenied");
-            }
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return View("AccessDenied");
+            //}
             return View("UserList");
         }
 
         [HttpGet]
         public async Task<IActionResult> UserList()
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return View("AccessDenied");
-            }
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return View("AccessDenied");
+            //}
             var users = await _administrationService.GetAllUsers();
             List<UserViewModel> userViewModels = new List<UserViewModel>();
             foreach (var user in users)
@@ -57,10 +57,10 @@ namespace Examiner.WEB.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Guid userId, string role)
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return View("AccessDenied");
-            }
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return View("AccessDenied");
+            //}
             List<string> roles = new List<string> { role };
             var user = await _administrationService.GetUserById(userId);
             await _administrationService.EditUserRole(userId, roles);
@@ -69,10 +69,10 @@ namespace Examiner.WEB.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid userId)
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return View("AccessDenied");
-            }
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return View("AccessDenied");
+            //}
             ViewBag.Roles = roles;
             var user = await _administrationService.GetUserById(userId);
             if (user != null)
@@ -93,10 +93,10 @@ namespace Examiner.WEB.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(Guid userId)
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return View("AccessDenied");
-            }
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return View("AccessDenied");
+            //}
             var user = await _administrationService.GetUserById(userId);
             if (user == null)
             {

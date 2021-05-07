@@ -7,11 +7,11 @@ namespace Examiner.DAL.EF
 {
     public class ExaminerDbContext : IdentityDbContext<User, Role, Guid>
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=examiner;Username=postgres;Password=kekmem");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=examiner;Username=postgres;Password=05qfmy2lsb");
 
         public ExaminerDbContext(DbContextOptions<ExaminerDbContext> options) : base(options)
         {
-/*            Database.EnsureDeleted();*/
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public DbSet<User> Users_ { get; set; }
