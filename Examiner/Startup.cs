@@ -89,6 +89,7 @@ namespace Examiner
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAdministrationService, AdministrationService>();
             services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<ITestService, TestService>();
             services.AddScoped<IUnitOfWork, EFUnitOfWork>();
         }
 

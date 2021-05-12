@@ -9,7 +9,9 @@ namespace Examiner.WEB.ViewModels
     {
         public Guid Id { get; set; }
         public string QuestionText { get; set; }
-        public List<AnswerViewModel> Answers { get; set; }
+
+        public string AnswerText { get; set; }
+        //public List<AnswerViewModel> Answers { get; set; }
 
     }
 }

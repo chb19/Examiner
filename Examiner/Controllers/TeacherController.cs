@@ -18,10 +18,12 @@ namespace Examiner.WEB.Controllers
     public class TeacherController : Controller
     {
         private ITeacherService _teacherService;
+        private ITestService _testService;
         private UserManager<User> _userManager;
-        public TeacherController(ITeacherService teacherService, UserManager<User> userManager)
+        public TeacherController(ITeacherService teacherService, UserManager<User> userManager, ITestService testService)
         {
             _teacherService = teacherService;
+            _testService = testService;
             _userManager = userManager;
         }
         public IActionResult Index()
@@ -119,24 +121,42 @@ namespace Examiner.WEB.Controllers
             return Json(new { success = true, message = "Delete successful." });
         }
 
-        public async Task<IActionResult> GetTestQuestions(Guid testId)
+        [HttpGet]
+        public async Task<IActionResult> TestQuestions(Guid testId)
         {
             var questions = await _teacherService.GetAllTestQuestions(testId);
+            var test = await _teacherService.GetSpecificTest(testId);
             List<QuestionViewModel> questionViewModels = new List<QuestionViewModel>();
             foreach (var question in questions)
             {
-                List<AnswerViewModel> answerViewModels = new List<AnswerViewModel>();
+                string answersTxt = string.Empty;
                 var answers = await _teacherService.GetQuestionAnswer(question.Id);
-                foreach (var answer in answers)
+                for (int i = 0; i < answers.Count; ++i)
                 {
-                    answerViewModels.Add(new AnswerViewModel { Id = answer.Id, AnswerText = answer.AnswerText, Correctness = answer.Correctness });
+                    if (answers[i].Correctness)
+                        answersTxt += "<b>" + answers[i].AnswerText + "</b>";
+                    else
+                        answersTxt += answers[i].AnswerText;
+
+                    if (i == answers.Count - 1)
+                        answersTxt += ".";
+                    else
+                        answersTxt += ", ";
                 }
-                questionViewModels.Add(new QuestionViewModel {Id = question.Id, QuestionText = question.QuestionText, Answers = answerViewModels});
+
+                questionViewModels.Add(new QuestionViewModel {Id = question.Id, QuestionText = question.QuestionText, AnswerText = answersTxt});
             }
-            ViewData["students"] = JsonConvert.SerializeObject(questionViewModels);
-            return View("TestQuestions", new QuestionViewModel { Id = testId });
+            ViewData["questions"] = JsonConvert.SerializeObject(questionViewModels);
+            return View("Test", new TestViewModel { Id = testId, Title = test.Title});
         }
 
+        [HttpGet]
+        public IActionResult AddQuestionToTest(Guid testId)
+        {
+            return View("AddQuestionToTest", testId);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetGroupStudentsList(Guid groupId)
         {
             var students = await _teacherService.GetStudentsFromGroup(groupId);
@@ -148,6 +168,8 @@ namespace Examiner.WEB.Controllers
             ViewData["students"] = JsonConvert.SerializeObject(userViewModels);
             return View("GroupStudentsList", new GroupViewModel { Id = groupId });
         }
+
+        [HttpPost]
         public IActionResult AddStudentToGroup(Guid groupId)
         {
             return View(new GroupViewModel { Id = groupId});

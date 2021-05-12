@@ -165,3 +165,118 @@ Npgsql.PostgresException (0x80004005): 28P01: ���������� "po
 2021-05-12 16:03:12.795 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2021-05-12 16:03:12.805 +03:00 [INF] Hosting environment: Development
 2021-05-12 16:03:12.806 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 17:57:13.266 +03:00 [INF] Starting web host
+2021-05-12 17:57:13.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 17:57:13.630 +03:00 [INF] Hosting environment: Development
+2021-05-12 17:57:13.631 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 17:58:05.807 +03:00 [INF] Starting web host
+2021-05-12 17:58:06.071 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 17:58:06.072 +03:00 [INF] Hosting environment: Development
+2021-05-12 17:58:06.073 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 17:58:07.372 +03:00 [ERR] The view 'TestQuestions' was not found. Searched locations: ["/Views/Teacher/TestQuestions.cshtml","/Views/Shared/TestQuestions.cshtml"]
+2021-05-12 17:58:07.381 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'TestQuestions' was not found. The following locations were searched:
+/Views/Teacher/TestQuestions.cshtml
+/Views/Shared/TestQuestions.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-12 18:09:15.597 +03:00 [INF] Starting web host
+2021-05-12 18:09:15.906 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 18:09:15.908 +03:00 [INF] Hosting environment: Development
+2021-05-12 18:09:15.908 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 18:14:00.512 +03:00 [INF] Starting web host
+2021-05-12 18:14:00.781 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 18:14:00.783 +03:00 [INF] Hosting environment: Development
+2021-05-12 18:14:00.783 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 18:54:56.451 +03:00 [INF] Starting web host
+2021-05-12 18:54:56.771 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 18:54:56.773 +03:00 [INF] Hosting environment: Development
+2021-05-12 18:54:56.773 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 18:56:53.041 +03:00 [INF] Starting web host
+2021-05-12 18:56:53.328 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 18:56:53.329 +03:00 [INF] Hosting environment: Development
+2021-05-12 18:56:53.330 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 18:57:36.446 +03:00 [INF] Starting web host
+2021-05-12 18:57:36.748 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 18:57:36.750 +03:00 [INF] Hosting environment: Development
+2021-05-12 18:57:36.750 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:02:33.425 +03:00 [INF] Starting web host
+2021-05-12 19:02:33.703 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:02:33.704 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:02:33.705 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:13:14.537 +03:00 [INF] Starting web host
+2021-05-12 19:13:14.810 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:13:14.812 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:13:14.813 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:15:58.172 +03:00 [INF] Starting web host
+2021-05-12 19:15:58.439 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:15:58.441 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:15:58.441 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:17:45.024 +03:00 [INF] Starting web host
+2021-05-12 19:17:45.283 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:17:45.285 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:17:45.285 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:47:22.282 +03:00 [INF] Starting web host
+2021-05-12 19:47:22.549 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:47:22.551 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:47:22.551 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 19:50:32.646 +03:00 [INF] Starting web host
+2021-05-12 19:50:33.602 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 19:50:33.612 +03:00 [INF] Hosting environment: Development
+2021-05-12 19:50:33.613 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 20:19:31.677 +03:00 [INF] Starting web host
+2021-05-12 20:19:31.949 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 20:19:31.950 +03:00 [INF] Hosting environment: Development
+2021-05-12 20:19:31.951 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 20:19:39.804 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Guid', but this ViewDataDictionary instance requires a model item of type 'Examiner.WEB.ViewModels.QuestionViewModel'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method461(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

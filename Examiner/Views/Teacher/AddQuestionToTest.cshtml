@@ -1,0 +1,13 @@
+﻿@model Examiner.WEB.ViewModels.QuestionViewModel;
+
+<h2>Add Question</h2>
+<form method="post" asp-controller="Teacher" asp-action="AddQuestionToTest">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group row">
+        <div class="col-lg-1">
+            <label asp-for="QuestionText">Question Text:</label>
+        </div>
+        <div class="col-3">
+            <input asp-for="QuestionText" class="form-control" type="email" />
+        </div>
+</form> 
