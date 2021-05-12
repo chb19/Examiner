@@ -7,7 +7,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#DT_load').DataTable({
         "ajax": {
-            "url": `/teacher/grouplist/`,
+            "url": `/teacher/testlist/`,
             "type": "GET",
             "datatype": "json"
         },
@@ -18,16 +18,16 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                    <a href="/teacher/editgroup?groupId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
+                    <a href="/teacher/edittest?testId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
                         Edit
                     </a>
-                    &nbsp;                    
-                    <a href="/teacher/GetGroupStudentsList/?groupId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
-                        Students
+                    &nbsp;
+                    <a href="/teacher/testquestions/?testId=${data}" class='btn btn-success text-white' style='cursor:pointer; width:80px;'>
+                        Questions
                     </a>
                     &nbsp;
                     <a class='btn btn-danger text-white' style='cursor:pointer; width:80px;'
-                        onclick=Delete("/Teacher/DeleteGroup?groupId=${data}")>
+                        onclick=Delete("/Teacher/DeleteTest?testId=${data}")>
                         Delete
                     </a>
                     </div>`;

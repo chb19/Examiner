@@ -1,11 +1,11 @@
-﻿@model Examiner.WEB.ViewModels.GroupViewModel
+﻿@model Examiner.WEB.ViewModels.TestViewModel
 
 <div asp-validation-summary="All" class="text-danger"></div>
 
-<form asp-action="Edit" method="post">
+<form asp-action="EditTest" method="post">
     <div class="form-group">
-        <input type="hidden" name="groupId" value="@Model.Id" />
-        <label for="title">Edit group</label>
+        <input type="hidden" name="testId" value="@Model.Id" />
+        <label for="title">Edit test</label>
         <input name="title" class="form-control col-lg-3" value="@Model.Title" />
     </div>
     <div class="form-row">
@@ -13,7 +13,7 @@
             <button type="submit" class="btn btn-primary form-control">Update</button>
         </div>
         <div class="col-1">
-            <a asp-action="Index" class="btn btn-success form-control">Back</a>
+            <a asp-action="Tests" class="btn btn-success form-control">Back</a>
         </div>
     </div>
 </form>

@@ -1,0 +1,25 @@
+﻿@model List<Examiner.WEB.ViewModels.TestViewModel>
+
+<h2>Test list</h2>
+
+<div>
+    <div class="btn-group">
+        <a asp-controller="Teacher" asp-action="CreateTest" class="btn btn-success form-control">Create</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-light float-lg-right form-control offset-1">Back</a>
+    </div>
+</div>
+<div class="col-12 border p-3">
+    <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/testList.js"></script>
+}

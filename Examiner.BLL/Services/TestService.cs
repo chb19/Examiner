@@ -3,26 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Examiner.BLL.DTO;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
+using Examiner.DAL.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace Examiner.BLL.Services
 {
     public class TestService : ITestService
     {
-        public Task<Question> AddQuestion()
+        private IUnitOfWork _repository;
+        private UserManager<User> _userManager;
+        public TestService(IUnitOfWork repository, UserManager<User> userManager)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+            _userManager = userManager;
         }
-
-        public Task<Question> DeleteQuestion()
+        public async Task AddQuestion(QuestionDTO questionDTO, Guid testId)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>
+            {
+                _repository.Questions.Create(new Question { CorrectAnswer = questionDTO.Answer, QuestionText = questionDTO.QuestionText, TestId = testId });
+                _repository.Save();
+            });
         }
-
-        public Task<Question> EditQuestion()
+        public async Task DeleteQuestion(Guid questionId)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>
+            {
+                _repository.Questions.Delete(questionId);
+                _repository.Save();
+            });
+        }
+        public async Task EditQuestion(QuestionDTO questionDTO)
+        {
+            var question = _repository.Questions.Find(x => x.Id == questionDTO.Id).ToList();
+            if (question.Count == 0)
+            {
+                return;
+            }
+            await Task.Run(() =>
+            {
+                var q = question[0];
+                q.QuestionText = questionDTO.QuestionText;
+                q.CorrectAnswer = questionDTO.Answer;
+                _repository.Questions.Update(q);
+                _repository.Save();
+            });
         }
     }
 }

@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Examiner.BLL.Interfaces;
 using Examiner.DAL.Entities;
 using Examiner.WEB.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Examiner.WEB.Controllers
 {
+    [Authorize(Roles ="Student")]
     public class StudentController : Controller
     {
         private IStudentService _studentService;
@@ -21,20 +23,12 @@ namespace Examiner.WEB.Controllers
         }
         public IActionResult Index()
         {
-            if (!User.IsInRole("Student"))
-            {
-                return View("AccessDenied");
-            }
             return View("GroupList");
         }
 
         [HttpGet]
         public async Task<IActionResult> GroupList()
         {
-            if (!User.IsInRole("Student"))
-            {
-                return View("AccessDenied");
-            }
             var user = await _userManager.GetUserAsync(HttpContext.User);
             var groups = await _studentService.GetAllStudentGroups(user.Id);
             List<GroupViewModel> groupViewModels = new List<GroupViewModel>();

@@ -1,0 +1,18 @@
+﻿@model string
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="CreateTest" method="post">
+    <div class="form-group">
+        <label for="title">New test</label>
+        <input name="title" class="form-control col-lg-3" />
+    </div>
+    <div class="form-row">
+        <div class="col-1">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+        <div class="col-1">
+            <a asp-action="Index" class="btn btn-success form-control">Back</a>
+        </div>
+    </div>
+</form>

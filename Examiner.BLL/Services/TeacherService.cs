@@ -182,6 +182,27 @@ namespace Examiner.BLL.Services
             {
                 return students;
             });
+        }
 
+        public async Task<IEnumerable<Question>> GetAllTestQuestions(Guid testId)
+        {
+            return await Task.Run(() =>
+            {
+                List<Question> questions = new List<Question>();
+                questions = _repository.Questions.GetAll().Where(x => x.TestId == testId).ToList();
+                return questions;
+            });
+
+        }
+
+        public async Task<List<Answer>> GetQuestionAnswer(Guid questionId)
+        {
+            return await Task.Run(() =>
+            {
+                List<Answer> answers = new List<Answer>();
+                answers = _repository.Answers.GetAll().Where(x => x.QuestionId == questionId).ToList();
+                return answers;
+            });
+        }
     }
 }
