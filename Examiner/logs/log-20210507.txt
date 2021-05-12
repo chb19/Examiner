@@ -1,0 +1,100 @@
+2021-05-07 21:37:39.834 +03:00 [INF] Starting web host
+2021-05-07 21:37:43.170 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-07 21:37:43.174 +03:00 [INF] Hosting environment: Development
+2021-05-07 21:37:43.175 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-07 22:30:54.511 +03:00 [INF] Starting web host
+2021-05-07 22:30:58.075 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-07 22:30:58.077 +03:00 [INF] Hosting environment: Development
+2021-05-07 22:30:58.077 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-07 22:32:26.248 +03:00 [INF] Starting web host
+2021-05-07 22:35:40.995 +03:00 [INF] Starting web host
+2021-05-07 22:35:42.342 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-07 22:35:42.356 +03:00 [INF] Hosting environment: Development
+2021-05-07 22:35:42.357 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-07 22:36:07.298 +03:00 [INF] User maks@gmail.com registered.
+2021-05-07 22:38:21.465 +03:00 [INF] Starting web host
+2021-05-07 22:38:22.816 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-07 22:38:22.825 +03:00 [INF] Hosting environment: Development
+2021-05-07 22:38:22.826 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-07 22:39:36.789 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:39:36.795 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:39:36.801 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:39:37.035 +03:00 [INF] User admin@gmail.com registered.
+2021-05-07 22:40:10.916 +03:00 [INF] User maks@gmail.com logged in.
+2021-05-07 22:40:19.702 +03:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Groups" ("Id", "StudentId", "TeacherId", "TestId", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2021-05-07 22:40:19.794 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Examiner.DAL.EF.ExaminerDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "TestId" of relation "Groups" violates not-null constraint
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "TestId" of relation "Groups" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Groups
+    ColumnName: TestId
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\executor\execmain.c
+    Line: 1953
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "TestId" of relation "Groups" violates not-null constraint
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "TestId" of relation "Groups" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Groups
+    ColumnName: TestId
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\executor\execmain.c
+    Line: 1953
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2021-05-07 22:42:42.775 +03:00 [INF] Starting web host
+2021-05-07 22:42:44.213 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-07 22:42:44.226 +03:00 [INF] Hosting environment: Development
+2021-05-07 22:42:44.227 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-07 22:43:36.650 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:43:36.658 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:43:36.662 +03:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-07 22:43:36.928 +03:00 [INF] User student@gmail.com registered.
+2021-05-07 22:43:47.208 +03:00 [INF] User maks@gmail.com logged in.

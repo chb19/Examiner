@@ -155,3 +155,13 @@ Npgsql.PostgresException (0x80004005): 28P01: ���������� "po
 2021-05-12 15:15:55.375 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2021-05-12 15:15:55.375 +03:00 [INF] Hosting environment: Development
 2021-05-12 15:15:55.375 +03:00 [INF] Content root path: C:\Users\chikh\source\repos\Examiner\Examiner
+2021-05-12 15:57:42.571 +03:00 [INF] Starting web host
+2021-05-12 15:57:43.819 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 15:57:43.824 +03:00 [INF] Hosting environment: Development
+2021-05-12 15:57:43.829 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
+2021-05-12 15:58:14.213 +03:00 [INF] User admin@gmail.com logged in.
+2021-05-12 15:58:25.897 +03:00 [INF] User maks@gmail.com logged in.
+2021-05-12 16:03:11.982 +03:00 [INF] Starting web host
+2021-05-12 16:03:12.795 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-12 16:03:12.805 +03:00 [INF] Hosting environment: Development
+2021-05-12 16:03:12.806 +03:00 [INF] Content root path: C:\Users\Maksym\Documents\Examiner\Examiner
