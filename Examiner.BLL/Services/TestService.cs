@@ -24,7 +24,7 @@ namespace Examiner.BLL.Services
         {
             await Task.Run(() =>
             {
-                _repository.Questions.Create(new Question { CorrectAnswer = questionDTO.Answer, QuestionText = questionDTO.QuestionText, TestId = testId });
+                _repository.Questions.Create(new Question { QuestionText = questionDTO.QuestionText, TestId = testId });
                 _repository.Save();
             });
         }

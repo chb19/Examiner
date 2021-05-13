@@ -153,8 +153,22 @@ namespace Examiner.WEB.Controllers
         [HttpGet]
         public IActionResult AddQuestionToTest(Guid testId)
         {
-            return View("AddQuestionToTest", testId);
+            return View("AddQuestionToTest", new QuestionViewModel { TestId = testId });
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> AddQuestionToTest(Guid testId, QuestionViewModel model)
+        //{
+        //    var question = new QuestionDTO(){ }
+        //    var user = await _userManager.GetUserAsync(HttpContext.User);
+        //    var test = await _teacherService.GetSpecificTest(testId);
+        //    if (test != null && user.Id != test.TeacherId)
+        //    {
+        //        return View("AccessDenied");
+        //    }
+        //    await _teacherService.EditTest(testId, title);
+        //    return RedirectToAction("Tests");
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetGroupStudentsList(Guid groupId)
@@ -169,7 +183,7 @@ namespace Examiner.WEB.Controllers
             return View("GroupStudentsList", new GroupViewModel { Id = groupId });
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult AddStudentToGroup(Guid groupId)
         {
             return View(new GroupViewModel { Id = groupId});

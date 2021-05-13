@@ -38,17 +38,6 @@ namespace XUnitTestExaminer.Controllers
         }
 
         [Fact]
-        public async Task LoginPost_SignInSucceeded_TestAsync()
-        {
-            _userService.Setup(x => x.Authenticate(It.IsAny<UserDTO>())).ReturnsAsync(Microsoft.AspNetCore.Identity.SignInResult.Success);
-
-            var result = await _accountController.Login(new LoginViewModel());
-
-            Assert.NotNull(result);
-            Assert.IsType<ViewResult>(result);
-        }
-
-        [Fact]
         public async Task LoginPost_InvalidModelState_TestAsync()
         {
             _userService.Setup(x => x.Authenticate(It.IsAny<UserDTO>())).ReturnsAsync(Microsoft.AspNetCore.Identity.SignInResult.Success);
@@ -57,6 +46,16 @@ namespace XUnitTestExaminer.Controllers
 
             Assert.NotNull(result);
             Assert.IsType<ViewResult>(result);
+        }
+
+        [Fact]
+        public async Task LoginPost_SignInSucceeded_TestAsync()
+        {
+            _userService.Setup(x => x.Authenticate(It.IsAny<UserDTO>())).ReturnsAsync(Microsoft.AspNetCore.Identity.SignInResult.Success);
+
+            var result = await _accountController.Login(new LoginViewModel());
+
+            Assert.NotNull(result);
         }
 
     }
